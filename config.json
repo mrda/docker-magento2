@@ -7,6 +7,9 @@
       "docker-entrypoint.sh": {
         "executable": true
       },
+      "fix-php-settings.sh": {
+        "executable": true
+      },
       "bin/mageconfigsync": {
         "executable": true
       },
@@ -42,6 +45,9 @@
       "docker-entrypoint.sh": {
         "executable": true
       },
+      "fix-php-settings.sh": {
+        "executable": true
+      },
       "etc/mail.ini": {},
       "etc/php.ini": {},
       "etc/php-xdebug.ini": {},
@@ -54,6 +60,9 @@
     "files": {
       "Dockerfile": {},
       "docker-entrypoint.sh": {
+        "executable": true
+      },
+      "fix-php-settings.sh": {
         "executable": true
       },
       "bin/mageconfigsync": {
@@ -89,6 +98,9 @@
     "files": {
       "Dockerfile": {},
       "docker-entrypoint.sh": {
+        "executable": true
+      },
+      "fix-php-settings.sh": {
         "executable": true
       },
       "etc/mail.ini": {},
