@@ -7,6 +7,7 @@ services:
       - VIRTUAL_HOST=magento2.docker
       - VIRTUAL_PORT=80
       - HTTPS_METHOD=noredirect
+      - TERM=xterm
     ports:
       - 80
     links:
@@ -24,7 +25,8 @@ services:
       - appdata
     env_file:
       - ./global.env
-    #environment:
+    environment:
+      - TERM=xterm
       #- VIRTUAL_HOST=magento2.docker
       #- VIRTUAL_PORT=80
       #- HTTPS_METHOD=noredirect
@@ -39,6 +41,8 @@ services:
       - db
     volumes_from:
       - appdata
+    environment:
+      - TERM=xterm
     env_file:
       - ./global.env
 
@@ -53,6 +57,7 @@ services:
       - MYSQL_DATABASE=magento2
       - MYSQL_USER=magento2
       - MYSQL_PASSWORD=magento2
+      - TERM=xterm
 
   cli:
     hostname: cli.magento2.docker
@@ -83,6 +88,7 @@ services:
       - M2SETUP_ADMIN_PASSWORD=password1
       - M2SETUP_VERSION=2.1.*
       # - M2SETUP_USE_SAMPLE_DATA=true
+      - TERM=xterm
 
   cron:
     build:
@@ -91,6 +97,7 @@ services:
     command: run-cron
     environment:
       - ENABLE_SENDMAIL=true
+      - TERM=xterm
     volumes_from:
       - appdata
     links:
