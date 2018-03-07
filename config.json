@@ -35,6 +35,7 @@
       "etc/mail.ini": {},
       "etc/php.ini": {},
       "etc/php-xdebug.ini": {},
+      "etc/env.php": {},
       "etc/php-opcache.ini": {}
     }
   },
@@ -53,6 +54,7 @@
       "etc/php.ini": {},
       "etc/php-xdebug.ini": {},
       "etc/php-fpm.conf": {},
+      "etc/env.php": {},
       "etc/php-opcache.ini": {}
     }
   },
@@ -92,6 +94,7 @@
       "etc/mail.ini": {},
       "etc/php.ini": {},
       "etc/php-xdebug.ini": {},
+      "etc/env.php": {},
       "etc/php-opcache.ini": {}
     }
   },
@@ -110,6 +113,7 @@
       "etc/php.ini": {},
       "etc/php-xdebug.ini": {},
       "etc/php-fpm.conf": {},
+      "etc/env.php": {},
       "etc/php-opcache.ini": {}
     }
   }

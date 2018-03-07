@@ -59,10 +59,13 @@ ADD fix-php-settings.sh /fix-php-settings.sh
 RUN ["chmod", "+x", "/fix-php-settings.sh"]
 RUN ["/fix-php-settings.sh"]
 
+ADD etc/php-opcache.ini /usr/local/etc/php/conf.d/zz-opcache.ini
 ADD etc/php-xdebug.ini /usr/local/etc/php/conf.d/zz-xdebug-settings.ini
 ADD etc/mail.ini /usr/local/etc/php/conf.d/zz-mail.ini
 
-ADD etc/php-opcache.ini /usr/local/etc/php/conf.d/zz-opcache.ini
+# Set up Magento environment
+ADD etc/env.php /var/www/magento/app/etc/env.php
+
 
 ADD docker-entrypoint.sh /docker-entrypoint.sh
 
