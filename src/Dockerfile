@@ -66,8 +66,8 @@ ADD etc/php-opcache.ini /usr/local/etc/php/conf.d/zz-opcache.ini
 
 ADD docker-entrypoint.sh /docker-entrypoint.sh
 
-RUN mkdir /var/www/.composer
-RUN chmod 777 /var/www/.composer
+RUN ["mkdir", "/var/www/.composer"]
+RUN ["chmod", "777", "/var/www/.composer"]
 
 RUN ["chmod", "+x", "/docker-entrypoint.sh"]
 
