@@ -34,7 +34,8 @@
       },
       "etc/mail.ini": {},
       "etc/php.ini": {},
-      "etc/php-xdebug.ini": {}
+      "etc/php-xdebug.ini": {},
+      "etc/php-opcache.ini": {}
     }
   },
   "7.0-fpm": {
@@ -51,7 +52,8 @@
       "etc/mail.ini": {},
       "etc/php.ini": {},
       "etc/php-xdebug.ini": {},
-      "etc/php-fpm.conf": {}
+      "etc/php-fpm.conf": {},
+      "etc/php-opcache.ini": {}
     }
   },
   "7.1-cli": {
@@ -89,7 +91,8 @@
       },
       "etc/mail.ini": {},
       "etc/php.ini": {},
-      "etc/php-xdebug.ini": {}
+      "etc/php-xdebug.ini": {},
+      "etc/php-opcache.ini": {}
     }
   },
   "7.1-fpm": {
@@ -106,7 +109,8 @@
       "etc/mail.ini": {},
       "etc/php.ini": {},
       "etc/php-xdebug.ini": {},
-      "etc/php-fpm.conf": {}
+      "etc/php-fpm.conf": {},
+      "etc/php-opcache.ini": {}
     }
   }
 }
