@@ -96,6 +96,11 @@ services:
     links:
       - db
 
+  redis:
+    image: 'redis'
+    links:
+      - fpm
+
   appdata:
     image: tianon/true
     volumes:
