@@ -25,6 +25,7 @@ RUN docker-php-ext-configure \
 
 # Install required PHP extensions
 RUN docker-php-ext-install \
+  bcmath \
   dom \
   gd \
   intl \
@@ -33,12 +34,13 @@ RUN docker-php-ext-install \
   pdo_mysql \
   xsl \
   zip \
-  soap
+  soap \
+  opcache
 
 # Install the 2.4 version of xdebug that's compatible with php7
 RUN pecl install -o -f xdebug-2.4.0
 
-ENV PHP_MEMORY_LIMIT 2G
+ENV PHP_MEMORY_LIMIT 3G
 ENV PHP_ENABLE_XDEBUG false
 ENV MAGENTO_ROOT /var/www/magento
 
@@ -46,8 +48,14 @@ ENV DEBUG false
 ENV UPDATE_UID_GID false
 
 ADD etc/php.ini /usr/local/etc/php/conf.d/zz-magento.ini
+ADD fix-php-settings.sh /fix-php-settings.sh
+RUN ["chmod", "+x", "/fix-php-settings.sh"]
+RUN ["/fix-php-settings.sh"]
+
 ADD etc/php-xdebug.ini /usr/local/etc/php/conf.d/zz-xdebug-settings.ini
 ADD etc/mail.ini /usr/local/etc/php/conf.d/zz-mail.ini
+
+ADD etc/php-opcache.ini /usr/local/etc/php/conf.d/zz-opcache.ini
 
 ADD docker-entrypoint.sh /docker-entrypoint.sh
 
@@ -55,7 +63,7 @@ RUN ["chmod", "+x", "/docker-entrypoint.sh"]
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
 
-ENV MAGENTO_RUN_MODE developer
+ENV MAGENTO_RUN_MODE production
 ENV UPLOAD_MAX_FILESIZE 64M
 
 ADD etc/php-fpm.conf /usr/local/etc/
